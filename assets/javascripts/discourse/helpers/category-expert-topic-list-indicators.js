@@ -22,18 +22,19 @@ export function categoryExpertTopicListIndicators(context) {
 
 const addApprovedPills = (topic, siteSettings) => {
   let html = "";
-  (topic.expert_post_group_names || []).forEach((groupName) => {
+
+  if (topic.expert_post_group_names) {
     const href = siteSettings.category_experts_topic_list_link_to_posts
       ? `${topic.url}/${topic.first_expert_post_id}`
       : "/search?q=with:category_expert_response";
 
     html += `<span class='topic-list-category-expert-tags'>
-    <a href=${href} class=${groupName}>
-    ${I18n.t("category_experts.topic_list.response_by_group", { groupName })}
+    <a href=${href} class='ascended_response'}>
+    ${I18n.t("category_experts.topic_list.response_by_group")}
     </a>
     </span>
     `;
-  });
+  }
 
   return html;
 };

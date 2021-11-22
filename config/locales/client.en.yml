@@ -28,7 +28,7 @@ en:
           other: "has been endorsed %{count} times for "
         endorsed_by: "Endorsed by (%{count})"
       topic_list:
-        response_by_group: "Expert response"
+        response_by_group: "Ascended Response"
         needs_approval: "Needs approval"
         question: "Question for expert"
       search:
